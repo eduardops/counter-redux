@@ -38,19 +38,37 @@ const counter = (state = 1, action) => {
     switch (action.type) {
         case INCREMENT :
             return state + 1;
+
         case INCREMENT_AMOUNT :
             return state + action.amount;
+
         case DECREMENT :
             return state - 1;
+
         case DECREMENT_AMOUNT :
             return state - action.amount;
+
         default:
             return state;
     }
 };
 
+const history = (state = [], action) => {
+    switch (action.type) {
+        default: return state
+    }
+};
+
+const user = (state = {name: 'Eduardo Serafim'}, action) => {
+    switch (action.type) {
+        default: return state
+    }
+};
+
 const reducers = combineReducers({
-    counter
+    counter,
+    history,
+    user
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
